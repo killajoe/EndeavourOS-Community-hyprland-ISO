@@ -3,7 +3,8 @@
 #
 
 export PATH="$HOME/.local/share/bin:$PATH"
-export $(run-parts f | xargs)
+export $(run-parts /usr/lib/systemd/user-environment-generators | xargs)
+sudo -E sed -i 's/pkexec/sudo -E/g' /usr/bin/eos-install-mode-run-calamares
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
