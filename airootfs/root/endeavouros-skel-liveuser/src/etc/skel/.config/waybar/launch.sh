@@ -16,10 +16,24 @@ killall waybar
 # ----------------------------------------------------- 
 # Loading the configuration based on the username
 # ----------------------------------------------------- 
-if [[ $USER = "denise" ]]
-then
-    waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css && 
-else
-    waybar &
-fi 
+while true; do
+    sleep 1s
+
+    # Check if Waybar is already running
+    if pgrep -x waybar > /dev/null; then
+        echo "[$(date)] Waybar is already running."
+        break
+    fi
+
+    if [ -e ~/.config/waybar/config.jsonc ]; then
+        log_file="/tmp/waybar-$(date +%Y-%m-%d-%H-%M-%S).log"
+        echo "[$(date)] Starting Waybar with custom configuration." >> "$log_file"
+        waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css &>> "$log_file"
+        break  # exit the loop after successfully launching Waybar
+    else
+        echo "[$(date)] Waybar config not found, using default configuration."        
+        waybar &
+        break  # exit the loop after launching Waybar with the default configuration
+    fi
+done
 
