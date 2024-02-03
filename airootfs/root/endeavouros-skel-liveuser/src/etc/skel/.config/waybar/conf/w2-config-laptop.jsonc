@@ -60,7 +60,7 @@
            
   },
   "custom/launcher": {       
-       "format": "<span font='9'></span>",  
+       "format": "<span font='10'></span>",  
        "on-click": "$HOME/.config/hypr/scripts/menu",
        //"on-click": "$HOME/.config/hypr/scripts/rofi-menu",
        "tooltip-format": "",
@@ -128,17 +128,17 @@
        "format": "{icon}",
        "format-icons": {
           "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-          "5": "",
-          "6": "",
-          "7": "",
-          "8": "",
-          "9": "",
-          "urgent": "",
-          "focused": "",
-          "default": ""
+          "2": "<span font='9'></span>",
+          "3": "<span font='9'></span>",
+          "4": "<span font='9'></span>",
+          "5": "<span font='9'></span>",
+          "6": "<span font='9'></span>",
+          "7": "<span font='9'></span>",
+          "8": "<span font='9'></span>",
+          "9": "<span font='9'></span>",
+          "urgent": "<span font='9'></span>",
+          "focused": "<span font='9'></span>",
+          "default": "<span font='9'></span>"
   },
   "sort-by-number": true,          
  
@@ -194,7 +194,7 @@
       "exec": "(checkupdates ; yay -Qua --noconfirm) | wc -l",
       "exec-if": "exit 0", 
       "interval": 900,
-      "format": "<span font='8' rise='1000'></span> {}",
+      "format": "<span font='10' rise='1000'>󰛀</span> {}",
       "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/uparch.sh && pkill -RTMIN+8 waybar'",
       "signal": 8,
       "tooltip": false
@@ -204,7 +204,7 @@
 //      "exec": "~/.config/waybar/scripts/updates.sh",
 //      "exec-if": "exit 0",
 //      "interval": 900,
-//      "format": "<span font='9' rise='1000'></span> {}",
+//      "format": "<span font='10' rise='1000'>󰛀</span> {}",
 //      "on-click": "kitty --ti10le 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/updates.sh && pkill -RTMIN+8 waybar'",
 //      "signal": 8,
 //      "tooltip": false       
@@ -241,7 +241,7 @@
   "custom/language": {
       "exec": "cat /tmp/kb_layout",
       "interval": 3,
-      "format": "<span font='8'> </span> {} ",
+      "format": "<span font='9'> </span> {} ",
       "on-click": "~/.config/hypr/scripts/switch_kb_layout.sh", 
       "tooltip": true // be carefull when clicking the module
 
@@ -309,9 +309,9 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": [
-      "<span font='9'></span>",
-      "<span font='9'></span>",
-      "<span font='9'></span>",
+      "<span font='9'></span>",
+      "<span font='9'></span>",
+      "<span font='9'>󰖨</span>",
     ],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
@@ -320,7 +320,7 @@
   
   },
   "custom/cycle_wall":{     
-      "format": "<span font='8'></span> Swww",
+      "format": "<span font='9'></span> Swww",
       "on-click": "~/.config/hypr/scripts/changeWallpaper2",
       "on-click-right": "azote",
       "tooltip": false
@@ -329,7 +329,8 @@
   "custom/dunst": {
     "exec": "~/.config/waybar/scripts/notifications",
     "on-click": "dunstctl set-paused toggle",
-    "restart-interval": 1,           
+    "restart-interval": 1,
+    "tooltip": false           
         
   },    
   "custom/power": {

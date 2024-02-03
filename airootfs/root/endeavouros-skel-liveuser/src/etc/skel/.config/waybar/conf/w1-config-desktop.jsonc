@@ -69,7 +69,7 @@
            
   },
   "custom/launcher": {       
-       "format": "<span font='9'></span>",  
+       "format": "<span font='10'></span>",  
        "on-click": "$HOME/.config/hypr/scripts/menu",
        //"on-click": "$HOME/.config/hypr/scripts/rofi-menu",
        "tooltip-format": "",
@@ -85,7 +85,7 @@
        
   },
   "custom/themeswitcher": {
-       "format": "",
+       "format": "<span font='9'></span>",
        "on-click": "$HOME/.config/waybar/scripts/switch-waybar-config.sh",
        //"on-click": "$HOME/.config/waybar/scripts/switch-rofi-waybar-config.sh",
        "tooltip-format": "",
@@ -95,7 +95,7 @@
   },
   // Outlook Launcher
   "custom/outlook": {
-       "format": "",
+       "format": "<span font='9'></span>",
        "on-click": "brave --app=https://outlook.com",
        "tooltip": false
        
@@ -109,7 +109,7 @@
   },
   // ChatGPT Launcher
   "custom/chatgpt": {
-       "format": "",
+       "format": "<span font='10'>󰭹</span>",
        "on-click": "brave --app=https://chat.openai.com",
        "tooltip": false
        
@@ -144,18 +144,18 @@
       "5": [],
       },
     "format-icons": {
-          "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-          "5": "",
-          "6": "",
-          "7": "",
-          "8": "",
-          "9": "",
-     "urgent": "",
-     "focused":"",
-      "default":""
+          "1": "<span font='9'></span>",
+          "2": "<span font='9'></span>",
+          "3": "<span font='9'></span>",
+          "4": "<span font='9'></span>",
+          "5": "<span font='9'></span>",
+          "6": "<span font='9'></span>",
+          "7": "<span font='9'></span>",
+          "8": "<span font='9'></span>",
+          "9": "<span font='9'></span>",
+     "urgent": "<span font='9'></span>",
+     "focused":"<span font='9'></span>",
+      "default":"<span font='9'></span>"
          
       
   },
@@ -215,7 +215,7 @@
 //      "exec": "(checkupdates ; yay -Qua --noconfirm) | wc -l",
 //      "exec-if": "exit 0", 
 //      "interval": 900,
-//      "format": "<span font='10' rise='1000'></span> {}",
+//      "format": "<span font='10' rise='1000'>󰛀</span> {}",
 //      "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/uparch.sh && pkill -RTMIN+8 waybar'",
 //      "signal": 8,
 //      "tooltip": false
@@ -225,7 +225,7 @@
         "exec": "~/.config/waybar/scripts/updates.sh",
         "exec-if": "exit 0",
         "interval": 900,      
-        "format": "<span font='8' rise='1000'></span>{}",
+        "format": "<span font='10' rise='1000'>󰛀</span>{}",
         "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/updates.sh && pkill -RTMIN+8 waybar'",
         "signal": 8,
         "tooltip": false       
@@ -305,30 +305,6 @@
       "on-scroll-up": "pamixer --default-source -i 5",
       "on-scroll-down": "pamixer --default-source -d 5",
       "scroll-step": 5
-    
-  },
-  "battery": {
-      "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-  },
-      "format": "{icon}   {capacity}%",
-      "format-charging": " {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-alt": "{time} {icon}",    
-      "format-icons": ["", "", "", "", ""],
-      "tooltip": true 
-          
-  },
-  "backlight": {
-      "device": "intel_backlight",
-      "format": "{icon} {percent}%",
-      "format-icons": ["", "", ""],
-      "on-scroll-up": "brightnessctl set 1%+",
-      "on-scroll-down": "brightnessctl set 1%-",
-      "tooltip": false,
-      "min-length": 6
   
   },
   "custom/cycle_wall":{     
@@ -341,7 +317,8 @@
   "custom/dunst": {
     "exec": "~/.config/waybar/scripts/notifications",
     "on-click": "dunstctl set-paused toggle",
-    "restart-interval": 1,           
+    "restart-interval": 1,
+    "tooltip": false           
         
   },    
   "custom/power": {

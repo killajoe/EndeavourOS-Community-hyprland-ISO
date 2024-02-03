@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Terminate already running Waybar instances
+pkill waybar
+
 # Check the current Waybar configuration path
 CURRENT_CONFIG=$(readlink -f ~/.config/waybar/config.jsonc)
 
@@ -20,6 +23,15 @@ else
     ln -sf "$DESKTOP_STYLE_PATH" ~/.config/waybar/style.css
 fi
 
+# Check if the flag file exists
+FLAG_FILE=~/.config/waybar/scripts/baraction_flag
+
+if [ ! -e "$FLAG_FILE" ]; then
+    # If the flag file doesn't exist, it means the script hasn't been executed yet
+
+    # Create the flag file to indicate that the script has been executed
+    touch "$FLAG_FILE"
+fi
+
 # Restart Waybar
 pkill waybar
-waybar &
