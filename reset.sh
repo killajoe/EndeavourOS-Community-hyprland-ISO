@@ -1,5 +1,6 @@
 #!/bin/sh
-rm -rf "work" "out"
+rm -rf "work" 
+#"out"
 rm airootfs/root/packages/*.pkg.tar.zst
 rm airootfs/root/packages/*.pkg.tar.zst.sig
 rm -rf airootfs/root/endeavouros-skel-liveuser/pkg
