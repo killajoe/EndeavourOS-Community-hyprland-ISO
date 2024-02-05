@@ -5,7 +5,7 @@ iso_name="EndeavourOS_CE_Hyprland"
 iso_label="EOS_$(date +%Y%m)"
 iso_publisher="EndeavourOS <https://endeavouros.com>"
 iso_application="EndeavourOS Live/Rescue CD"
-iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y-%m-%d_%H-%M)"
+iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y-%m-%d)"
 install_dir="arch"
 buildmodes=('iso')
 quiet="n"
