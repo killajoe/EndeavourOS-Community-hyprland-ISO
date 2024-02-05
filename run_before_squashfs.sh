@@ -47,8 +47,8 @@ usermod -s /usr/bin/bash root
 
 # Create liveuser
 useradd -m -p "" -g 'liveuser' -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' -s /bin/bash liveuser
-cp "/root/liveuser.png" "/var/lib/AccountsService/icons/liveuser"
-rm "/root/liveuser.png"
+#cp "/root/liveuser.png" "/var/lib/AccountsService/icons/liveuser"
+#rm "/root/liveuser.png"
 
 # Remove liveuser skel to clean for target skel
 #pacman -Rns --noconfirm -- "endeavouros-skel-liveuser"
@@ -74,9 +74,9 @@ rm -rf "/root/packages/"
 systemctl set-default multi-user.target
 
 # Set wallpaper for live-session and original for installed system
-mv "endeavouros-wallpaper.png" "/etc/calamares/files/endeavouros-wallpaper.png"
-mv "/root/livewall.png" "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png"
-chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
+#mv "endeavouros-wallpaper.png" "/etc/calamares/files/endeavouros-wallpaper.png"
+#mv "/root/livewall.png" "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png"
+#chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
 
 # CUSTOM FIXES
 
